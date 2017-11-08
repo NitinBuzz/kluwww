@@ -8,6 +8,7 @@ import {
   CardText
 } from 'material-ui/Card';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
+import Paper from 'material-ui/Paper';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
@@ -15,32 +16,48 @@ import { plusOne, minusOne } from '../actions/actions';
 
 const imgStyle = {
   width: 140,
-  height: 280
+  height: 220
 };
 
 const style = {
-  margin: 20
+  margin: 0
 };
 
 // onClick={props.myAct(props.id, props.hits)}
-
+// #F44336 #1565C0
 const FeatureItem = props => (
   <div>
-    <Card>
+    <Card zDepth={2}>
       <CardHeader
         title={props.title}
+        titleStyle={{ fontFamily: 'Ubuntu' }}
         subtitle={props.subTitle}
+        subtitleStyle={{ fontFamily: 'Ubuntu' }}
+        style={{ fontWeight: 'bold' }}
+        titleColor="#1565C0"
         avatar={props.display}
       />
       <CardMedia
-        overlay={<CardTitle title={props.title} subtitle={props.subTitle} />}
+        overlay={
+          <CardTitle
+            title={props.title}
+            titleStyle={{ fontFamily: 'Ubuntu' }}
+            subtitle={props.subTitle}
+            subtitleStyle={{ fontFamily: 'Ubuntu' }}
+          />
+        }
       >
         <img style={imgStyle} src={props.display} alt="" />
       </CardMedia>
-      <CardText>{props.text}</CardText>
+      <CardText
+        style={{ fontWeight: '', fontFamily: 'Ubuntu', fontSize: '110%' }}
+      >
+        {props.text}
+      </CardText>
       <CardActions>
         <FloatingActionButton
-          mini={true}
+          mini
+          backgroundColor="#1E88E5"
           style={style}
           onClick={() => {
             props.dispatch(plusOne(props.id));
@@ -48,15 +65,26 @@ const FeatureItem = props => (
         >
           <span>++</span>
         </FloatingActionButton>
-        <span
-          style={{
-            fontWeight: 'bold'
-          }}
-        >
-          {props.hits}
-        </span>
+
         <FloatingActionButton
-          mini={true}
+          mini
+          disabled
+          disabledColor="white"
+          style={{ margin: 0 }}
+        >
+          <span
+            style={{
+              fontWeight: '',
+              fontSize: '120%',
+              color: 'black'
+            }}
+          >
+            {props.hits}
+          </span>
+        </FloatingActionButton>
+        <FloatingActionButton
+          mini
+          backgroundColor="#1E88E5"
           style={style}
           onClick={() => {
             props.dispatch(minusOne(props.id));
@@ -71,13 +99,9 @@ const FeatureItem = props => (
   </div>
 );
 
-const mapStateToProps = (state, props) => {
-  return {
-    feature: state.find(feature => {
-      return feature.id === props.id;
-    })
-  };
-};
+const mapStateToProps = (state, props) => ({
+  feature: state.find(feature => feature.id === props.id)
+});
 // const mapDispatchToProps = dispatch => ({
 //   myAct: id => dispatch(myAction(id))
 // });
