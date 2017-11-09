@@ -6,6 +6,8 @@ import DashBoard from './../components/DashBoard';
 import Help from './../components/Help';
 import NotFound from './../components/NotFound';
 import AboutUs from './../components/AboutUs';
+import Footer from './../components/Footer';
+import Contact from './../components/Contact';
 
 export const history = createHistory();
 
@@ -16,9 +18,10 @@ const AppRouter = () => (
       <Switch>
         <Route path="/" component={DashBoard} exact={true} />
         <Route path="/about" component={AboutUs} />
-        <Route path="/help" component={Help} />
+        <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
+      <Footer />
     </div>
   </Router>
 );

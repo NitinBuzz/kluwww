@@ -5,6 +5,9 @@ class RegisterSubmit extends React.Component {
   constructor(props) {
     super(props);
   }
+  handleSubmit = () => {
+    this.props.submitEmail();
+  };
   render() {
     let button;
     if (this.props.vaild) {
@@ -14,9 +17,7 @@ class RegisterSubmit extends React.Component {
           primary
           buttonStyle={{ backgroundColor: '#1E88E5' }}
           style={{ margin: 16 }}
-          onClick={() => {
-            console.log(`okaies`);
-          }}
+          onClick={this.handleSubmit}
         />
       );
     } else {
@@ -31,7 +32,7 @@ class RegisterSubmit extends React.Component {
         />
       );
     }
-    <div>{console.log(this.props)}</div>;
+
     return button;
   }
 }

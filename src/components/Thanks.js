@@ -26,8 +26,14 @@ class Thanks extends React.Component {
       <div>
         <Snackbar
           open={this.state.open}
-          message="Event added to your calendar"
-          autoHideDuration={4000}
+          bodyStyle={{
+            backgroundColor: '#1E88E5',
+            fontFamily: 'Ubuntu',
+            fontWeight: '',
+            fontSize: '110%'
+          }}
+          message="You are registered with us, Cheers."
+          autoHideDuration={6000}
           onRequestClose={this.handleRequestClose}
         />
       </div>

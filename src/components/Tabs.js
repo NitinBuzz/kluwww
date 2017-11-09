@@ -16,6 +16,7 @@ class NavTabs extends Component {
         value={this.props.history.location.pathname}
         inkBarStyle={{ backgroundColor: '#1E88E5' }}
         onChange={this.handleCallToRouter}
+        tabTemplateStyle={{}}
         style={{
           margin: 0
         }}
@@ -57,7 +58,7 @@ class NavTabs extends Component {
         />
         <Tab
           label="Contact Us"
-          value="/not"
+          value="/contact"
           style={{
             margin: 0,
             backgroundColor: '#ffffff',

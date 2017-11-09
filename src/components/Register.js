@@ -41,8 +41,9 @@ class RegisterForm extends React.Component {
     //   })
     //   : null;
   };
-  handleAddEmail = email => {
-    console.log(email);
+  handleAddEmail = () => {
+    console.log(this.state.email);
+    // Dispatch Action Here
     this.setState({
       done: 1
     });
@@ -58,6 +59,8 @@ class RegisterForm extends React.Component {
     } else {
       comp = (
         <div>
+          <br />
+          <br />
           <Grid>
             <Row>
               <Col xsOffset={2} xs={8} xsOffset={2}>
@@ -85,12 +88,14 @@ class RegisterForm extends React.Component {
                     <RegisterSubmit
                       vaild={this.state.validSubmit}
                       email={this.state.email}
+                      submitEmail={this.handleAddEmail}
                     />
                   </Col>
                 </Row>
               </Col>
             </Row>
           </Grid>
+          <br />
         </div>
       );
     }
