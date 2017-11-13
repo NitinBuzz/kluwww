@@ -9,7 +9,7 @@ const Intro = () => (
       backgroundColor: '#1E88E5',
       color: '#ffffff',
       textAlign: 'center',
-      fontFamily: 'Lobster'
+      fontFamily: 'Acme'
     }}
   >
     <Grid>
@@ -18,9 +18,9 @@ const Intro = () => (
           <h2 style={{ margin: 20 }}>
             KLU World Wide will bring KLUians across the globe under one roof.
           </h2>
-          <p>
-            <span>KLUWW will go live soon...</span>{' '}
-            <span>Register and stay in touch.</span>
+          <p style={{}}>
+            <span>KLUWW will go live soon, </span>{' '}
+            <span> do register and stay in touch.</span>
           </p>
         </Col>
       </Row>

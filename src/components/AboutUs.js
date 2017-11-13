@@ -59,7 +59,6 @@ const AboutUs = () => (
                 margin: 10,
                 marginTop: 22,
                 fontFamily: 'Ubuntu',
-                fontWeight: 'bold',
                 fontSize: '120%'
               }}
             >

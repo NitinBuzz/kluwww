@@ -16,22 +16,20 @@ const DashBoard = props => (
   <div style={{ backgroundColor: '#E0E0E0' }}>
     <Grid>
       <Row>
-        {console.log(props)}
-        {console.log(typeof props.features)}
         <Row>
           <RegisterForm />
         </Row>
         <Row>
           <Col smOffset={3} sm={6} smOffset={3}>
-            <h2
+            <h3
               style={{
                 textAlign: 'center',
-                fontFamily: 'Lobster',
-                color: '#1E88E5'
+                fontFamily: 'Roboto',
+                color: '#1565C0'
               }}
             >
-              Top 6 features of KLUWW
-            </h2>
+              Top features of KLUWW
+            </h3>
           </Col>
         </Row>
         <br />
@@ -49,11 +47,9 @@ const DashBoard = props => (
   </div>
 );
 
-const mapStateToProps = state => {
-  return {
-    // state
-    features: state
-  };
-};
+const mapStateToProps = state => ({
+  // state
+  features: state
+});
 
 export default connect(mapStateToProps)(DashBoard);

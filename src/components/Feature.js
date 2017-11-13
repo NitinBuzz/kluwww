@@ -12,7 +12,7 @@ import Paper from 'material-ui/Paper';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
-import { plusOne, minusOne } from '../actions/actions';
+import { startPlusOne, startMinusOne } from '../actions/actions';
 
 const imgStyle = {
   width: 140,
@@ -60,7 +60,7 @@ const FeatureItem = props => (
           backgroundColor="#1E88E5"
           style={style}
           onClick={() => {
-            props.dispatch(plusOne(props.id));
+            props.dispatch(startPlusOne(props.id));
           }}
         >
           <span>++</span>
@@ -87,15 +87,13 @@ const FeatureItem = props => (
           backgroundColor="#1E88E5"
           style={style}
           onClick={() => {
-            props.dispatch(minusOne(props.id));
+            props.dispatch(startMinusOne(props.id));
           }}
         >
           <span>--</span>
         </FloatingActionButton>
       </CardActions>
     </Card>
-
-    {console.log('this', props.display)}
   </div>
 );
 

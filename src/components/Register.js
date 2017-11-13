@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import CircularProgress from 'material-ui/CircularProgress';
+import { startRegisterEmail, startPlusOne } from '../actions/actions';
 import Thanks from './Thanks';
 import RegisterSubmit from './RegisterSubmit';
 
@@ -11,7 +14,8 @@ class RegisterForm extends React.Component {
     super(props);
     this.state = {
       email: undefined,
-      done: 0,
+      done: false,
+      acting: false,
       validSubmit: false
     };
   }
@@ -19,7 +23,7 @@ class RegisterForm extends React.Component {
     this.setState({
       email: e.target.value
     });
-    console.log(typeof this.state.email);
+
     if (this.state.email) {
       const regEx = new RegExp(/\S+@\S+\.\S+/);
       //  console.log(this.state.email.match(regEx));
@@ -33,29 +37,48 @@ class RegisterForm extends React.Component {
         });
       }
     }
-    // this.state.email.contains(
-    //   '/^(([^<>()[]\\.,;:s@"]+(.[^<>()[]\\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/'
-    // )
-    //   ? this.setState({
-    //     validSubmit: true
-    //   })
-    //   : null;
+    this.props.dispatch(startPlusOne());
   };
   handleAddEmail = () => {
-    console.log(this.state.email);
-    // Dispatch Action Here
     this.setState({
-      done: 1
+      acting: true
     });
-    // document.getElementsByName('email').value = '';
-    // console.log(this.refs);
-    // ReactDOM.findDOMNode(this.refs.email).value = "";
-    //  this.refs.email.value = '';
+    this.props.dispatch(startRegisterEmail(this.state.email));
+
+    setTimeout(() => {
+      this.setState({ acting: false, done: true });
+    }, 3000);
+
+    // this.setState({
+    //   done: true,
+    //   acting: false
+    // });
+
+    // Dispatch Action Here
   };
   render() {
     let comp;
-    if (this.state.done === 1) {
+    if (this.state.done === true) {
       comp = <Thanks />;
+    } else if (this.state.acting === true) {
+      comp = (
+        <div>
+          <Grid>
+            <Row>
+              <div>
+                <Col smOffset={3} sm={6} smOffset={3}>
+                  <div style={{ textAlign: 'center' }}>
+                    <br />
+                    <br />
+                    <br />
+                    <CircularProgress color="#1565C0" thickness={7} />
+                  </div>
+                </Col>
+              </div>
+            </Row>
+          </Grid>
+        </div>
+      );
     } else {
       comp = (
         <div>
@@ -68,7 +91,7 @@ class RegisterForm extends React.Component {
                   <Col xs={8}>
                     <TextField
                       autocomplete="off"
-                      hintText="eg: kluworldwide@gmail.com"
+                      hintText="eg: reachnitin@gmail.com"
                       hintStyle={{ color: '#9E9E9E', fontFamily: 'Ubuntu' }}
                       floatingLabelText="Enter your Email"
                       floatingLabelStyle={{
@@ -103,4 +126,4 @@ class RegisterForm extends React.Component {
   }
 }
 
-export default RegisterForm;
+export default connect()(RegisterForm);

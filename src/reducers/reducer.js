@@ -26,6 +26,8 @@ export default (state = features, action) => {
       });
     case 'SET_FEATURES':
       return action.features;
+    case 'REGISTER_EMAIL':
+      return state;
     default:
       return state;
   }

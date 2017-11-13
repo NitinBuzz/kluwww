@@ -5,16 +5,16 @@ import * as firebase from 'firebase';
 // import pm from '../../dist/images/pm.png';
 // import profile from '../../dist/images/profile.png';
 // import story from '../../dist/images/story.png';
-import access from '../../dist/images/access.jpg';
+// import access from '../../dist/images/access.jpg';
 
 // Initialize Firebase
 const config = {
-  apiKey: 'AIzaSyDPghmj3Pq7BemJyzk0vmQmvG5NZd31WWE',
-  authDomain: 'klu-sky1.firebaseapp.com',
-  databaseURL: 'https://klu-sky1.firebaseio.com',
-  projectId: 'klu-sky1',
-  storageBucket: 'klu-sky1.appspot.com',
-  messagingSenderId: '742325620049'
+  apiKey: process.env.apiKey,
+  authDomain: process.env.authDomain,
+  databaseURL: process.env.databaseURL,
+  projectId: process.env.projectId,
+  storageBucket: process.env.storageBucket,
+  messagingSenderId: process.env.messagingSenderId
 };
 
 firebase.initializeApp(config);
@@ -31,7 +31,18 @@ const database = firebase.database();
 //   console.log('Uploaded a blob or file!');
 //   console.log(snapshot);
 // });
-
+// database.ref('RegisteredUsers').push({
+//   email: '11@11.11'
+// });
+// database.ref('RegisteredUsers').push({
+//   email: '22@22.22'
+// });
+// database.ref('RegisteredUsers').push({
+//   email: 'bb@bb.bb'
+// });
+// database.ref('RegisteredUsers').push({
+//   email: 'aa@aa.aa'
+// });
 // database.ref('features').push({
 //   id: 1,
 //   title: 'Only KLUians allowed in',

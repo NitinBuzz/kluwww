@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "8.6.0",
+    "npm": "5.5.1"
+  },
   "scripts": {
-    "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "build": "cross-env NODE_ENV=dev webpack",
+    "build:prod": "webpack -p --env production",
+    "dev-server": "webpack-dev-server",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
@@ -13,12 +20,11 @@
     "babel-eslint": "^8.0.1",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
-
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-
     "babel-preset-env": "^1.6.1",
-
     "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "dotenv": "^4.0.0",
     "eslint": "^4.10.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -39,7 +45,6 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "url-loader": "^0.6.2",
-
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.3"
   }
