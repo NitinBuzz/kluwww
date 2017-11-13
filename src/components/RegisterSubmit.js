@@ -13,19 +13,21 @@ class RegisterSubmit extends React.Component {
     if (this.props.vaild) {
       button = (
         <RaisedButton
+          className="pull-right"
           label="Register"
           primary
           buttonStyle={{ backgroundColor: '#1E88E5' }}
-          style={{ margin: 16 }}
+          style={{ marginTop: 16, marginLeft: 30 }}
           onClick={this.handleSubmit}
         />
       );
     } else {
       button = (
         <RaisedButton
+          className="pull-right"
           label="Register"
           disabled
-          style={{ margin: 16 }}
+          style={{ marginTop: 16, marginLeft: 30 }}
           onClick={() => {
             console.log(`okaies`);
           }}
