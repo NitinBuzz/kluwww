@@ -22,7 +22,9 @@ const Footer = () => (
         <Col smOffset={2} sm={8} smOffset={2}>
           <div>
             Hand crafted with love by{' '}
-            <span style={{ color: '#E0E0E0' }}>Nitin </span>
+            <a target="_blank" href="https://nitinbuzz.online/">
+              <span style={{ color: '#E0E0E0' }}>Nitin </span>
+            </a>
             and some
           </div>
           awesome contributors.
