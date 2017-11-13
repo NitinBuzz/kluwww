@@ -23,11 +23,11 @@ const Footer = () => (
           <div>
             Hand crafted with love by{' '}
             <a target="_blank" href="http://nitinbuzz.online/">
-              <span style={{ color: '#E0E0E0' }}>Nitin </span>
+              <span style={{ color: '#E0E0E0' }}>Nitin</span>
             </a>
-            and some
+            . Feel free to reach out, if you would like to contribute or suggest
+            something.
           </div>
-          awesome contributors.
           <br />
           <br />
           <div>

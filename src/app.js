@@ -22,8 +22,7 @@ const loading = (
       status="loading"
       style={{
         top: '40%',
-        left: '40%',
-        display: 'inline-block',
+        left: '45%',
         position: 'fixed'
       }}
     />
