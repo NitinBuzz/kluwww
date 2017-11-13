@@ -17,8 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  devtool:
-    process.env.NODE_ENV === 'production' ? 'source-map' : 'eval-source-map',
+  devtool: 'source-map',
 
   // 'source-map' :
   //  This is for auto build with webpack-dev-server alternatively I did yarn run build --watch
