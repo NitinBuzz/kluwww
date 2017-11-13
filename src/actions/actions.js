@@ -42,7 +42,7 @@ export const doPlusOne = child2 => ({
   id: child2.id
 });
 
-export const startPlusOne = (id = 1) => dispatch =>
+export const startPlusOne = (id = 555) => dispatch =>
   database
     .ref('features')
     .once('value')
@@ -62,7 +62,9 @@ export const startPlusOne = (id = 1) => dispatch =>
           database.ref(`features/${childSnapShot.key}`).update(newFeature);
         }
       });
-      dispatch(doPlusOne(child));
+      if (child) {
+        dispatch(doPlusOne(child));
+      }
     });
 
 export const doMinusOne = child2 => ({
