@@ -1,5 +1,6 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import FontIcon from 'material-ui/FontIcon';
 
 class RegisterSubmit extends React.Component {
   constructor(props) {
@@ -12,26 +13,25 @@ class RegisterSubmit extends React.Component {
     let button;
     if (this.props.vaild) {
       button = (
-        <RaisedButton
-          className="pull-right"
-          label="Register"
-          primary
-          buttonStyle={{ backgroundColor: '#1E88E5' }}
-          style={{ marginTop: 16 }}
+        <FontIcon
+          className="material-icons"
+          color="#1E88E5"
+          hoverColor="#1565C0"
+          style={{ marginTop: 26 }}
           onClick={this.handleSubmit}
-        />
+        >
+          send
+        </FontIcon>
       );
     } else {
       button = (
-        <RaisedButton
-          className="pull-right"
-          label="Register"
-          disabled
-          style={{ marginTop: 16 }}
-          onClick={() => {
-            console.log(`okaies`);
-          }}
-        />
+        <FontIcon
+          className="material-icons"
+          color="#ffffff"
+          style={{ marginTop: 26 }}
+        >
+          send
+        </FontIcon>
       );
     }
 
