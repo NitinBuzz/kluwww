@@ -17,7 +17,7 @@ class RegisterSubmit extends React.Component {
           label="Register"
           primary
           buttonStyle={{ backgroundColor: '#1E88E5' }}
-          style={{ marginTop: 16, marginLeft: 30 }}
+          style={{ marginTop: 16 }}
           onClick={this.handleSubmit}
         />
       );
@@ -27,7 +27,7 @@ class RegisterSubmit extends React.Component {
           className="pull-right"
           label="Register"
           disabled
-          style={{ marginTop: 16, marginLeft: 30 }}
+          style={{ marginTop: 16 }}
           onClick={() => {
             console.log(`okaies`);
           }}
