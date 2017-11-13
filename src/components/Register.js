@@ -91,7 +91,7 @@ class RegisterForm extends React.Component {
                   <Col xs={8}>
                     <TextField
                       autocomplete="off"
-                      hintText="eg: reachnitin@gmail.com"
+                      hintText="here"
                       hintStyle={{ color: '#9E9E9E', fontFamily: 'Ubuntu' }}
                       floatingLabelText="Enter your Email"
                       floatingLabelStyle={{
