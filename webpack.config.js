@@ -29,7 +29,7 @@ module.exports = {
       'process.env.projectId': JSON.stringify(process.env.projectId),
       'process.env.storageBucket': JSON.stringify(process.env.storageBucket),
       'process.env.messagingSenderId': JSON.stringify(
-        process.env.memessagingSenderId
+        process.env.messagingSenderId
       )
     })
   ],
