@@ -42,7 +42,7 @@ const Footer = () => (
           </div>
           <br />
           <br />
-          Thank you to all the supports, it means a lot.
+          Thank you for all the support, it means a lot.
         </Col>
       </Row>
       <br />
