@@ -35,9 +35,9 @@ const AboutUs = () => (
               }}
             >
               It all started with a thought on the night of 19th Aug 2017, that
-              KLU'inas must have an exclusive platform to prosper togeather.
-              From then we started building this brick by brick, wokring
-              day-night to progess.
+              KLU'inas must have an exclusive platform to prosper together. From
+              then we started building this brick by brick, wokring day-night to
+              progess.
             </div>
             <Line />
 
