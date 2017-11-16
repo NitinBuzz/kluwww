@@ -107,7 +107,7 @@ class RegisterForm extends React.Component {
                       }}
                     />
                   </Col>
-                  <Col xsOffset={1} xs={3}>
+                  <Col xs={4}>
                     <RegisterSubmit
                       vaild={this.state.validSubmit}
                       email={this.state.email}
