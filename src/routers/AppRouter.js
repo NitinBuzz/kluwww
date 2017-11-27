@@ -19,7 +19,7 @@ const AppRouter = () => (
         <Route path="/" component={DashBoard} exact={true} />
         <Route path="/about" component={AboutUs} />
         <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
+        <Route component={DashBoard} />
       </Switch>
       <Footer />
     </div>
