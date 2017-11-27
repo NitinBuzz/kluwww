@@ -49,8 +49,7 @@ const AboutUs = () => (
                 fontSize: '120%'
               }}
             >
-              Presently KLUWW is with KLU for review. Weither they officialy
-              support it ot not, KLUWW won't go down. We are on fire to add this
+              Presently KLUWW is with KLU for review. We are on fire to add this
               feather into the crown of KLU.
             </div>
             <Line />
